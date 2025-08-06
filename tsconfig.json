@@ -1,0 +1,10 @@
+{
+  "extends": "assemblyscript/std/assembly.json",
+  "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/assemblyscript/std/types",
+      "./assembly/types"
+    ],
+    "types": ["assembly", "hmacsha2"]
+  }
+}

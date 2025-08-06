@@ -1,6 +1,6 @@
 *~
-build
-node_modules
-package-lock.json
+/build/**/* */
+!/build/types/.gitkeep
+/node_modules
 *.wasm
 *.wat

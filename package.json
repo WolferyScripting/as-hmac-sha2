@@ -1,6 +1,9 @@
 {
-  "name": "as-hmac-sha2",
-  "version": "1.0.2",
+  "name": "@wolfery/as-hmac-sha2",
+  "version": "1.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "SHA-256, HMAC-SHA256, SHA-512 and HMAC-SHA512 for AssemblyScript.",
   "main": "index.js",
   "type": "module",
@@ -8,12 +11,14 @@
     "asbuild:untouched": "asc assembly/index.ts --target debug",
     "asbuild:optimized": "asc assembly/index.ts --target release",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "build:types": "node devbin/buildtypes.js",
     "test": "asp --verbose",
-    "test:ci": "asp --summary"
+    "test:ci": "asp --summary",
+    "prepublishOnly": "npm run build:types"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jedisct1/as-hmac-sha2.git"
+    "url": "git+https://github.com/WolferyScripting/as-hmac-sha2.git"
   },
   "keywords": [
     "assemblyscript",
@@ -23,15 +28,16 @@
     "sha512",
     "sha-512"
   ],
-  "author": "Frank Denis <npm@pureftpd.org>",
-  "license": "ISC",
+  "author": "Donovan_DMC <hewwo@yiff.rocks>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jedisct1/as-hmac/issues"
+    "url": "https://github.com/WolferyScripting/as-hmac-sha2/issues"
   },
-  "homepage": "https://github.com/jedisct1/as-hmac#readme",
+  "homepage": "https://github.com/WolferyScripting/as-hmac-sha2#readme",
   "devDependencies": {
-    "@assemblyscript/loader": "^0.21.3",
     "@as-pect/cli": "^7.0.8",
-    "assemblyscript": "^0.21.3"
+    "@assemblyscript/loader": "^0.21.3",
+    "assemblyscript": "^0.21.3",
+    "typescript": "^5.9.2"
   }
 }

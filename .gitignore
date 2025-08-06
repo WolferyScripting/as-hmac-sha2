@@ -1,5 +1,5 @@
 *~
-/build/**/* */
+/build/**/*
 !/build/types/.gitkeep
 /node_modules
 *.wasm

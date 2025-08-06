@@ -6,8 +6,8 @@ import { fileURLToPath } from "url";
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(dirname, '../');
 const files = ["sha256", "sha512", "utils"];
-exec(`npx tsc assembly/{${files.join(",")}}.ts --declaration --emitDeclarationOnly --outDir build/types`, {
-	cwd: rootDir,
+exec(`npx tsc ${files.map(f => `assembly/${f}.ts`).join(" ")} --declaration --emitDeclarationOnly --outDir build/types`, {
+	cwd: rootDir
 }, (error, stdout, stderr) => {
 	for (const file of files) {
         // Read file into a string

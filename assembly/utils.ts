@@ -26,7 +26,7 @@ export function bin2hex(bin: Uint8Array): string {
 * @param hex Hex-encoded data
 * @returns Raw binary representation
 */
-function hex2bin(hex: string): Uint8Array | null {
+export function hex2bin(hex: string): Uint8Array | null {
     let hex_len = hex.length;
     if ((hex_len & 1) !== 0) {
         return null;
